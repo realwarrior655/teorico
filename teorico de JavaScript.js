@@ -219,7 +219,8 @@ function Persona(nombre, edad) {
 
 const persona1 = new Persona('Juan', 30);
 
-//  funciones generadoras: 
+//  funciones generadoras: generan una secuencia de valores en una serie de pasos.
+// estas funciones pueden pausarse y reanudarse luego.
 
 function* generarSecuencia() {
     yield 1;
@@ -232,3 +233,128 @@ const secuencia = generarSecuencia();
   secuencia.next(); // { value: 2, done: false }
   secuencia.next(); // { value: 3, done: false }
   secuencia.next(); // { value: undefined, done: true }
+
+
+// DOM y manipulacion:
+// metodos de acceso y manipulacion del DOM:
+
+document.getElementById('ID') //permite trabajar con el elemento del ID que llamaste
+document.getElementsByClassName('classname') //permite trabajar con el elemento de la clase que llamaste
+document.getElementsByTagName('h1') //permite trabajar con el elemento de la etiqueta HTML que llamaste
+document.querySelector('.clase') //permite trabajar con el elemento que coincida con el selector CSS
+document.querySelectorAll('.clase') //permite trabajar con todos los elementos que coincidan con el selector CSS
+
+
+//EVENTOS Y METODOS DE EVENTOS:
+
+// vamos a categorizarlos.
+
+//EVENTOS DEL TECLADO:se disparan con acciones del teclado
+
+// keydown: presionar una tecla 
+document.addEventListener('keydown', function(event) {
+    console.log('Se presionó la tecla: ' + event.key);
+});
+
+
+// keyup: soltar una tecla 
+document.addEventListener('keyup', function(event) {
+    console.log('Se soltó la tecla: ' + event.key);
+});
+
+// keypress: al mantener una tecla precionada 
+document.addEventListener('keypress', function(event) {
+    console.log('Se está precionando la tecla: ' + event.key);
+});
+
+
+//EVENTOS DEL MOUSE: se disparan con acciones del mouse
+
+// click: Se dispara cuando se hace clic con el botón izquierdo del mouse.
+const miElemento0 = document.getElementById('miElemento0');
+
+miElemento0.addEventListener('click', function(event) {
+    console.log('Se hizo clic en el elemento.');
+});
+
+// dblclick: Se dispara cuando se hace doble clic con el botón izquierdo del mouse.
+const miElemento1 = document.getElementById('miElemento1');
+
+miElemento1.addEventListener('dbclick', function(event) {
+    console.log('Se hizo doble clic en el elemento.');
+});
+
+// mouseover: Se dispara cuando el cursor del mouse ingresa a un elemento.
+const miElemento2 = document.getElementById('miElemento2');
+
+miElemento2.addEventListener('mouseover', function(event) {
+    console.log('el mouse está sobre el elemento.');
+});
+
+// mouseout: Se dispara cuando el cursor del mouse sale de un elemento.
+const miElemento3 = document.getElementById('miElemento3');
+
+miElemento3.addEventListener('mouseout', function(event) {
+    console.log('el mouse salio de el elemento.');
+});
+
+// mousemove: Se dispara cuando el cursor del mouse se mueve sobre un elemento.
+const miElemento4 = document.getElementById('miElemento4');
+
+miElemento4.addEventListener('mousemvoe', function(event) {
+    console.log('El mouse se está moviendo.');
+});
+
+
+//EVENTOS DE FORMULARIO:
+
+// submit: Se dispara cuando se envía un formulario.
+const miFormulario = document.getElementById('miFormulario');
+
+miFormulario.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe
+        console.log('Se ha evitado la acción predeterminada del enlace.');
+});
+
+// change: Se dispara cuando el valor de un elemento cambia.
+const miFormulario1 = document.getElementById('miFormulario1');
+
+miFormulario.addEventListener('change', function(event) {
+    event.preventDefault(); // Evita que el formulario se modifique
+        console.log('Se evito la modificacion del valor del elemento.');
+});
+
+// input: Se dispara cuando se ingresa un valor en un elemento <input>, <select> o <textarea>.
+
+const miFormulario2 = document.getElementById('miFormulario2');
+
+miFormulario.addEventListener('input', function(event) {
+     event.preventDefault(); // Evita que el formulario se 
+        console.log('Se evito la modificacion del valor del elemento.');
+});
+
+//EVENTOS DE VENTANA:
+
+// load: Se dispara cuando se completa la carga de la ventana y todos sus recursos.
+
+window.addEventListener('load', function() {
+    console.log('La ventana ha cargado completamente.');
+});
+
+// resize: Se dispara cuando se cambia el tamaño de la ventana del navegador.
+
+window.addEventListener('resize', function() {
+    console.log('La ventana ha cambiado de tamaño.');
+});
+
+// scroll: Se dispara cuando se desplaza la ventana.
+
+window.addEventListener('scroll', function() {
+    console.log('la ventana esta siendo scrolleada.');
+});
+
+
+
+
+
+
