@@ -222,7 +222,7 @@ const persona1 = new Persona('Juan', 30);
 //  funciones generadoras: generan una secuencia de valores en una serie de pasos.
 // estas funciones pueden pausarse y reanudarse luego.
 
-function* generarSecuencia() {
+function generarSecuencia() {
     yield 1;
     yield 2;
     yield 3;
@@ -353,6 +353,29 @@ window.addEventListener('scroll', function() {
     console.log('la ventana esta siendo scrolleada.');
 });
 
+//LOCAL STORAGE: permite almacenar pares de datos del uso de la pagina incluso si la pagina se cierra.
+
+// Almacenar datos en el Local Storage
+localStorage.setItem('nombre', 'Juan');
+localStorage.setItem('edad', '30');
+
+// Obtener datos del Local Storage
+const nombre = localStorage.getItem('nombre');
+const edad = localStorage.getItem('edad');
+console.log('Nombre: ' + nombre + ', Edad: ' + edad);
+
+// Eliminar un dato específico del Local Storage
+localStorage.removeItem('nombre');
+
+// Borrar todos los datos del Local Storage
+localStorage.clear();
+
+
+//METODOS de JSON muy utiles
+
+JSON.stringify() //transforma el JSON en un STRING
+JSON.parse() //transforma el STRING en un JSON
+
 
 //ASINCRONISMO EN JAVASCRIPT:
 
@@ -374,7 +397,62 @@ function operacionAsincrona(callback) {
 
 //PROMESAS: Las promesas son objetos que representan el resultado eventual de una operación asincrónica. Permiten un mejor manejo de las operaciones asincrónicas y evitan el anidamiento excesivo de devoluciones de llamada. Las promesas pueden estar en uno de tres estados: pendiente, cumplida o rechazada. Esto permite encadenar operaciones asincrónicas y manejar errores de manera más clara.
 
-//ASYNC/AWAIT: El async/await es una característica introducida en ECMAScript 2017 que simplifica aún más el manejo de operaciones asincrónicas. Permite escribir código asincrónico de una manera más similar a código síncrono, lo que facilita la lectura y el mantenimiento. La palabra clave async se utiliza para declarar una función asincrónica, y await se utiliza para esperar el resultado de una promesa dentro de una función asincrónica.
+// Función que devuelve una promesa
+function operacionAsincrona() {
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+        const resultado = 10;
+        if (resultado) {
+            resolve(resultado);
+        } else {
+            reject('Ha ocurrido un error');
+        }
+        }, 1000);
+    });
+}
 
+  // Uso de la promesa
+operacionAsincrona()
+    .then(function(resultado) {
+        console.log('El resultado es: ' + resultado);
+    })
+    .catch(function(error) {
+        console.error('Error: ' + error);
+    });
+
+
+//ASYNC/AWAIT: El async/await es una característica introducida en ECMAScript 2017 que simplifica aún más el manejo de operaciones asincrónicas. Permite escribir código asincrónico de una manera más similar a código síncrono, lo que facilita la lectura y el mantenimiento. La palabra clave async se utiliza para declarar una función asincrónica, y await se utiliza para esperar el resultado de una promesa dentro de una función asincrónica. ESTA ES LA FORMA ACTUAL DE TRABAJAR EL ASINCRONISMO EN CONJUNTO CON EL FETCH.
+
+// Función asincrónica con async/await
+function esperar(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function operacionAsincrona() {
+    await esperar(1000);
+    return 15;
+}
+
+//En las funciones asíncronas, el bloque try...catch se utiliza para manejar errores y excepciones que puedan ocurrir durante la ejecución del código asíncrono. Cuando se produce un error dentro de un bloque try, la ejecución se detiene y se transfiere al bloque catch correspondiente, donde se pueden realizar acciones de manejo de errores, como imprimir mensajes de error, realizar tareas de limpieza o notificar al usuario.
+
+
+  // Uso de async/await
+async function realizarOperacion() {
+    try {
+        const resultado = await operacionAsincrona();
+        console.log('El resultado es: ' + resultado);
+    } catch (error) {
+        console.error('Error: ' + error);
+    }
+}
+realizarOperacion();
+
+
+
+//el FETCH es una forma de solicitar recursos externos una URL definida, se llama directamente con esa URL y usando la palabra FETCH
+
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+
+//por ejemplo.
 
 
