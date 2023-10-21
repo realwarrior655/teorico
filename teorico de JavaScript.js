@@ -354,7 +354,27 @@ window.addEventListener('scroll', function() {
 });
 
 
+//ASINCRONISMO EN JAVASCRIPT:
 
+//CALLBACKS: En JavaScript, las devoluciones de llamada son funciones que se pasan como argumentos a otras funciones y que se llaman después de que se completa una operación asincrónica. Aunque efectivas, las devoluciones de llamada pueden llevar a un código anidado confuso y a un fenómeno conocido como "callback hell".
+
+// Función con devolución de llamada
+function operacionAsincrona(callback) {
+    setTimeout(function() {
+        const resultado = 5;
+        callback(resultado);
+    }, 1000);
+}
+
+  // Llamada a la función con devolución de llamada
+    operacionAsincrona(function(resultado) {
+        console.log('El resultado es: ' + resultado);
+});
+
+
+//PROMESAS: Las promesas son objetos que representan el resultado eventual de una operación asincrónica. Permiten un mejor manejo de las operaciones asincrónicas y evitan el anidamiento excesivo de devoluciones de llamada. Las promesas pueden estar en uno de tres estados: pendiente, cumplida o rechazada. Esto permite encadenar operaciones asincrónicas y manejar errores de manera más clara.
+
+//ASYNC/AWAIT: El async/await es una característica introducida en ECMAScript 2017 que simplifica aún más el manejo de operaciones asincrónicas. Permite escribir código asincrónico de una manera más similar a código síncrono, lo que facilita la lectura y el mantenimiento. La palabra clave async se utiliza para declarar una función asincrónica, y await se utiliza para esperar el resultado de una promesa dentro de una función asincrónica.
 
 
 
