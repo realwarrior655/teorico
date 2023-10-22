@@ -1,1 +1,101 @@
 //aca voy a poner como se tipean los estilos con CSS
+
+//SELECTORES:
+
+//DE TIPO:  
+p { color: blue;
+    /* Reglas de estilo para párrafos  */}
+
+//DE CLASE: 
+
+.clase { color: violet;
+    /* Reglas de estilo para elementos con la clase "clase" */
+}
+
+//DE ID: 
+
+#miID { color: red;
+    /* Reglas de estilo para el elemento con el ID "miID" */
+}
+
+//DESCENDENTES: estan ANIDADOS
+
+div p { color: black;
+    /* Reglas de estilo para párrafos dentro de div */
+}
+
+//DE ATRIBUTOS: 
+
+[type="text"] { color: blanchedalmond;
+    /* Reglas de estilo para elementos con el atributo type="text" */
+}
+
+//PSEUDO CLASES: 
+
+a:hover { border: 1cm;
+    /* Reglas de estilo para enlaces cuando el cursor está sobre ellos */  }
+
+button:active { background-color: green;
+    /* Reglas de estilo para botones cuando están activados */
+}
+    
+input:focus { padding: auto;
+    /* Reglas de estilo para inputs cuando tienen el foco */
+}
+
+p:first-child { margin-top: 0%;
+    /* Reglas de estilo para el primer párrafo hijo de su contenedor */
+}
+
+div:last-child { display: flex;
+    /* Reglas de estilo para el último div hijo de su contenedor */
+}
+
+
+//PSEUDO ELEMENTOS: 
+
+p::before {
+    content: "Antes de";
+    /* Agrega "Antes de" al principio de cada párrafo */
+}
+
+p::after {
+    content: "Después de";
+    /* Agrega "Después de" al final de cada párrafo */
+}
+
+
+p::first-line { color: red;
+    /* Reglas de estilo para la primera línea de cada párrafo */
+}
+
+p::first-letter { font: bolder;
+    /* Reglas de estilo para la primera letra de cada párrafo */
+}
+
+//ESTILOS BASICOS DE CSS PARA ELEMENTOS HTML::after
+
+.miElementoHTML {   color: white;
+                    background-color: black;
+                    font-family: 'Courier New', Courier, monospace;
+                    font-size: 24px;
+                    font-weight: bold;
+                    text-align: justify;
+                    text-decoration: dotted;
+                    padding: auto;
+                    margin: auto;
+                    border: 20px solid greenyellow;
+                    width: 40px;
+                    height: 40px;
+                    display: grid;
+                    float: left;
+                    position: fixed;
+}
+
+
+
+
+
+
+
+
