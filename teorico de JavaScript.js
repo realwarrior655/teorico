@@ -35,6 +35,35 @@ const Objeto = {
 const Array1 = [1, 2, 3, 4, 5]; //datos en lista
 const Array2 = [{ nombre: 'Juan', edad: 30 }, { nombre: 'Maria', edad: 25 }]; //array de arrays
 
+//metodos de un array:
+
+push(); /*agrega uno o más elementos al final de un array, */ 
+
+pop(); /*elimina el último elemento de un array. */
+
+shift(); /*elimina el primer elemento de un array, */
+
+unshift(); /*agrega uno o más elementos al principio de un array. */
+
+concat(); /*Crea un nuevo array combinando arrays existentes.*/
+
+slice(); /*Devuelve una copia superficial de una porción de un array en un nuevo array.*/
+
+splice(); /*Cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos.*/
+
+forEach(); /*Ejecuta una función dada una vez por cada elemento del array.*/
+
+map();/* Crea un nuevo array con los resultados de llamar a una función proporcionada en cada elemento del array.
+
+filter(): /*Crea un nuevo array con todos los elementos que pasan la prueba implementada por la función proporcionada.*/
+
+reduce(); /*Aplica una función a un acumulador y a cada valor de un array (de izquierda a derecha) para reducirlo a un único valor.*/
+
+find(); /*devuelve el primer elemento del array que cumple con la condición especificada en la función dada */ 
+
+findIndex(); /*devuelve el índice del primer elemento que cumple con la condición especificada.*/
+
+
 //funcion:
 
 function funcion(dato1, dato2) {
@@ -218,6 +247,27 @@ function Persona(nombre, edad) {
 }
 
 const persona1 = new Persona('Juan', 30);
+
+//ASI SE ARMARIA UNA CARD CON FUNCION CONSTRUCTORA:
+
+// Función constructora para la tarjeta
+function Card(title, content, author) {
+    this.title = title;
+    this.content = content;
+    this.author = author;
+    this.displayCard = function() {
+        console.log(`Title: ${this.title}`);
+        console.log(`Content: ${this.content}`);
+        console.log(`Author: ${this.author}`);
+    };
+}
+
+// Crear una instancia de la tarjeta
+let myCard = new Card("Sample Title", "Sample Content", "Sample Author");
+
+// Mostrar la tarjeta
+myCard.displayCard();
+
 
 //  funciones generadoras: generan una secuencia de valores en una serie de pasos.
 // estas funciones pueden pausarse y reanudarse luego.
@@ -454,5 +504,6 @@ realizarOperacion();
 fetch('https://jsonplaceholder.typicode.com/posts/1')
 
 //por ejemplo.
+
 
 

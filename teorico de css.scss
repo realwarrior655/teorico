@@ -90,8 +90,87 @@ p::first-letter { font: bolder;
                     display: grid;
                     float: left;
                     position: fixed;
+
+
 }
 
+//ANIMACIONES: 
+
+
+        /* Definición de la animación */
+        @keyframes exampleAnimation {
+            0% {background-color: red;}
+            50% {background-color: yellow;}
+            100% {background-color: green;}
+        }
+
+        /* Aplicación de la animación a la clase "animado" */
+        .animado {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: exampleAnimation;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+
+//TRANSICION::
+
+        /* Definición de la transición */
+        .transicion {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition-property: width, height, background-color;
+            transition-duration: 2s;
+            transition-timing-function: linear;
+        }
+
+        /* Cambios de estilo al pasar el cursor sobre el elemento */
+        .transicion:hover {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+        }
+
+
+//CODIGO EJEMPLO PARA GRID Y FLEXBOX: 
+
+.containerParaGrid {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+    grid-template-rows: 100px 100px 1fr 100px;
+    grid-template-columns: 1fr 200px;
+    height: 100vh;
+}
+
+.header{    grid-area: header;
+            background-color: lightblue; }
+
+.nav {      grid-area: nav;
+            background-color: lightgreen; }
+
+.main { 
+    grid-area: main; 
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: flex-start; 
+    justify-content: center; 
+}
+.section1, .section2, .section3 { 
+    flex: 1 1 200px; 
+    min-height: 200px; 
+    margin: 10px; 
+    background-color: lightcoral; 
+}
+.aside { grid-area: aside; background-color: lightyellow; }
+
+.footer { grid-area: footer; background-color: lightpink; }
 
 
 
